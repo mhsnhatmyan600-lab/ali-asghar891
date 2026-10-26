@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه معنوی ذوالفقار</title>
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" rel="stylesheet" type="text/css" />
+    <!-- آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --green-dark: #004d00;
+            --green-light: #00ff00;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* هدر */
+        header {
+            background-color: var(--green-dark);
+            text-align: center;
+            padding: 25px 15px;
+            border-bottom: 3px solid var(--green-light);
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        header i { color: var(--green-light); }
+
+        main { flex: 1; }
+
+        /* بنر اصلی */
+        #hero {
+            background: linear-gradient(135deg, #111 0%, var(--green-dark) 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .hero-content h2 {
+            color: var(--green-light);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p { color: var(--text-muted); }
+
+        /* بخش محصولات */
+        #products {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--green-light);
+            font-size: 1.8rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--green-light);
+            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--green-light);
+            margin: 15px 0;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .card .price {
+            color: var(--green-light);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card button {
+            background-color: transparent;
+            color: var(--green-light);
+            border: 1px solid var(--green-light);
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .card button:hover {
+            background-color: var(--green-light);
+            color: #000;
+        }
+
+        /* بخش ثبت‌نام */
+        #signup {
+            background-color: var(--card-bg);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid var(--green-dark);
+            border-bottom: 2px solid var(--green-dark);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            border-radius: 12px;
+        }
+
+        #signup h2 { color: var(--green-light); margin-bottom: 10px; }
+        #signup p { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #signup input {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: #000;
+            color: white;
+            font-family: inherit;
+            width: 250px;
+            outline: none;
+        }
+
+        #signup input:focus { border-color: var(--green-light); }
+
+        #signup button {
+            padding: 10px 25px;
+            background-color: var(--green-dark);
+            color: white;
+            border: 1px solid var(--green-light);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        #signup button:hover {
+            background-color: var(--green-light);
+            color: #000;
+        }
+
+        .message {
+            margin-top: 15px;
+            color: var(--green-light);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #050505;
+            color: #555;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-shield-halved"></i> فروشگاه معنوی ذوالفقار</h1>
+    </header>
+    
+    <main>
+        <!-- بنر بالای صفحه -->
+        <div id="hero">
+            <div class="hero-content">
+                <h2>نهایت شکوه و معنویت</h2>
+                <p>بهترین محصولات معنوی با کیفیت تضمینی</p>
+            </div>
+        </div>
+
+        <!-- بخش محصولات -->
+        <section id="products">
+            <h2 class="section-title">محصولات ما</h2>
+            <div id="product-grid" class="grid-container">
+                <!-- محصولات با جاوا اسکریپت اضافه می‌شوند -->
+            </div>
+        </section>
+
+        <!-- بخش ثبت‌نام -->
+        <section id="signup">
+            <h2>عضویت در باشگاه مشتریان</h2>
+            <p>برای دریافت تخفیف‌های ویژه ثبت‌نام کنید</p>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="نام کاربری خود را وارد کنید">
+                <button onclick="register()">ثبت‌نام</button>
+            </div>
+            <p id="msg" class="message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© ۱۴۰۳ فروشگاه ذوالفقار - تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        // لیست ۲۵ محصول معنوی (با آیکون‌های گرافیکی برای لود تضمینی)
+        const products = [
+            { name: "تسبیح", icon: "📿" },
+            { name: "مهر نماز", icon: "🕌" },
+            { name: "جانماز", icon: "🧎" },
+            { name: "قرآن کریم", icon: "📖" },
+            { name: "مفاتیح الجنان", icon: "📕" },
+            { name: "عطر عود", icon: "🕌" },
+            { name: "انگشتر عقیق", icon: "💍" },
+            { name: "سجاده", icon: "🧶" },
+            { name: "تورات (تزئینی)", icon: "📜" },
+            { name: "شیرینی نذری", icon: "🍬" },
+            { name: "چادر نماز", icon: "🧕" },
+            { name: "سنگ پا", icon: "🪨" },
+            { name: "کتاب نهج‌البلاغه", icon: "📚" },
+            { name: "دستبند مذهبی", icon: "📿" },
+            { name: "پرچم یا حسین", icon: "🚩" },
+            { name: "کتیبه", icon: "🖼️" },
+            { name: "سربند", icon: "🩹" },
+            { name: "مدال", icon: "🏅" },
+            { name: "کتاب صحیفه سجادیه", icon: "📗" },
+            { name: "شمع معطر", icon: "🕯️" },
+            { name: "کاسه نذری", icon: "🥣" },
+            { name: "آجیل مشکل گشا", icon: "🥜" },
+            { name: "اسپند دودکن", icon: "🔥" },
+            { name: "قاب عکس آیه", icon: "🖼️" },
+            { name: "ساعت دیواری مذهبی", icon: "⏰" }
+        ];
+
+        // تابع تولید قیمت رندوم
+        function getRandomPrice() {
+            return Math.floor(Math.random() * 900 + 100) * 1000;
+        }
+
+        // ساخت کارت‌های محصول
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="card">
+                    <div class="card-icon">${p.icon}</div>
+                    <h3>${p.name}</h3>
+                    <span class="price">${getRandomPrice().toLocaleString('fa-IR')} تومان</span>
+                    <button onclick="alert('محصول ${p.name} به سبد خرید اضافه شد!')">خرید</button>
+                </div>
+            `).join('');
+        }
+
+        // ثبت‌نام
+        function register() {
+            const user = document.getElementById('username').value;
+            const msg = document.getElementById('msg');
+            if(user) {
+                msg.style.color = "#00ff00";
+                msg.innerText = user + " عزیز، ثبت‌نام شما با موفقیت انجام شد.";
+                document.getElementById('username').value = '';
+            } else {
+                msg.style.color = "#ff0000";
+                msg.innerText = "لطفاً نام کاربری را وارد کنید.";
+            }
+        }
+
+        // اجرای اولیه
+        renderProducts();
+    </script>
+</body>
+</html>
